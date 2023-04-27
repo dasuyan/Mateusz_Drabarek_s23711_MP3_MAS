@@ -3,7 +3,7 @@ package inheritance_overlapping
 import java.time.LocalDate
 import java.util.*
 
-internal enum class EmployeeType {
+enum class EmployeeType {
     Employee,
     Caretaker,
     Receptionist,
@@ -11,33 +11,33 @@ internal enum class EmployeeType {
     Hairdresser
 }
 class Employee(
-    var name: String,
-    var surname: String,
-    var birthDate: LocalDate,
-    private var medicalTest: Boolean,
+    val name: String,
+    val surname: String,
+    val birthDate: LocalDate,
+    private var workingWithAggressiveCatsPermit: Boolean,
     private var number: Int
 ) {
-    private var employeeType = EnumSet.of(EmployeeType.Employee)
-        private set
-    init {
-        employeeType.add(EmployeeType.Caretaker)
+     var employeeType: EnumSet<EmployeeType> = EnumSet.of(EmployeeType.Employee)
+
+    /*init {
+        employeeType.add(EmployeeType.Behaviourist)
         employeeType.add(EmployeeType.Receptionist)
-    }
+    }*/
 
     @Throws(Exception::class)
-    fun hasMedicalTest(): Boolean {
-        if (employeeType.contains(EmployeeType.Caretaker)) {
-            return medicalTest
+    fun canWorkWithAggressiveCats(): Boolean {
+        if (employeeType.contains(EmployeeType.Behaviourist)) {
+            return workingWithAggressiveCatsPermit
         }
-        throw Exception("The person is not an employee!")
+        throw Exception("This person is not a Behaviourist!")
     }
 
     @Throws(Exception::class)
-    fun setMedicalTest(medicalTest: Boolean) {
-        if (employeeType.contains(EmployeeType.Caretaker)) {
-            this.medicalTest = medicalTest
+    fun setWorkingWithAggressiveCatsPermit(workingWithAggressiveCatsPermit: Boolean) {
+        if (employeeType.contains(EmployeeType.Behaviourist)) {
+            this.workingWithAggressiveCatsPermit = workingWithAggressiveCatsPermit
         } else {
-            throw Exception("The person is not an employee!")
+            throw Exception("This person is not a Behaviourist!")
         }
     }
 
@@ -46,7 +46,7 @@ class Employee(
         if (employeeType.contains(EmployeeType.Receptionist)) {
             return number
         }
-        throw Exception("The person is not a receptionist!")
+        throw Exception("This person is not a receptionist!")
     }
 
     @Throws(Exception::class)
@@ -54,7 +54,7 @@ class Employee(
         if (employeeType.contains(EmployeeType.Receptionist)) {
             this.number = number
         } else {
-            throw Exception("The person is not a receptionist!")
+            throw Exception("This person is not a receptionist!")
         }
     }
 }

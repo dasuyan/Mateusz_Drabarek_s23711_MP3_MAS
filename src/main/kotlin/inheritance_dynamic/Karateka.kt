@@ -2,27 +2,26 @@ package inheritance_dynamic
 
 import java.time.LocalDate
 
-class Student : Person {
-    val number: Int
-    val scholarship: Float
+class Karateka : Person {
+    private val number: Int
+    private val equipmentBudget: Long
 
-    constructor(firstName: String, lastName: String, birthDate: LocalDate, number: Int, scholarship: Float) : super(
+    constructor(firstName: String, lastName: String, birthDate: LocalDate, number: Int, equipmentBudget: Long) : super(
         firstName, lastName, birthDate
     ) {
         this.number = number
-        this.scholarship = scholarship
+        this.equipmentBudget = equipmentBudget
     }
-
-    constructor(prevPerson: Person, number: Int, scholarship: Float) : super(
+    constructor(prevPerson: Person, number: Int, equipmentBudget: Long) : super(
         prevPerson.firstName,
         prevPerson.lastName,
         prevPerson.birthDate
     ) {
         // Copy the old data
         this.number = number
-        this.scholarship = scholarship
+        this.equipmentBudget = equipmentBudget
     }
 
-    override val income: Float
-        get() = scholarship
+    override val schoolExpense: Long
+        get() = equipmentBudget
 }

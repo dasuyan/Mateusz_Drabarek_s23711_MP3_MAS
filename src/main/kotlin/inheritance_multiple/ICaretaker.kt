@@ -1,8 +1,9 @@
 package inheritance_multiple
 
 
-interface IStudent {
-    val income: Double
-    val scholarship: Double
-    val number: Int
+interface ICaretaker {
+    val income: Long
+    val bonus: Long
+    val number: String
+    val listOfCats: MutableList<String>
 }

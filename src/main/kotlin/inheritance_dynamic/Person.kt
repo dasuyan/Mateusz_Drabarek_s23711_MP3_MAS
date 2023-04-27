@@ -7,13 +7,9 @@ abstract class Person(
     val lastName: String,
     val birthDate: LocalDate
 ) {
-    /**
-     * Gets the total income of a person.
-     * @return
-     */
-    abstract val income: Float
+    abstract val schoolExpense: Long
 
     override fun toString(): String {
-        return this.javaClass.simpleName + ": " + firstName + " " + lastName
+        return "${this.javaClass.simpleName}: $firstName $lastName"
     }
 }
