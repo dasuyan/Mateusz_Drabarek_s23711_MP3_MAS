@@ -2,10 +2,6 @@ package inheritance_multiaspect
 
 import java.time.Year
 
-enum class FossilFuelType {
-    Gasoline, Diesel, Gas
-}
-
 abstract class Car(
     val modelName: String,
     val brand: String,

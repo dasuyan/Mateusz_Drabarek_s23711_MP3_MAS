@@ -2,9 +2,6 @@ package inheritance_multiaspect
 
 import java.time.Year
 
-enum class RoofType {
-    Textile, DetachableHardtop, RetractableHardtop
-}
 class Convertible(
     modelName: String, brand: String, productionYear: Year, replaceableBattery: Boolean?,
     universalChargingStationCompatibility: Boolean?, suitableFuelType: FossilFuelType?, co2MgPerKm: Long?,

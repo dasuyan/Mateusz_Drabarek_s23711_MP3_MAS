@@ -10,6 +10,8 @@ abstract class Person(
     abstract val schoolExpense: Long
 
     override fun toString(): String {
-        return "${this.javaClass.simpleName}: $firstName $lastName"
+        return """${this.javaClass.simpleName}: $firstName $lastName
+            | and the school spends $schoolExpense on them.
+        """.trimMargin()
     }
 }

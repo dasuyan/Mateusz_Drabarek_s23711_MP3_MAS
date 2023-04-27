@@ -20,12 +20,12 @@ import java.time.Year
 
 
 fun main() {
-    // testDisjointAbstractClass()
-    // testDisjointPolymorphism()
-    // testOverlappingInheritance()
-    // testMultipleInheritance()
-    // testMultiAspectInheritance()
-    // testInheritanceDynamicCopying()
+     testDisjointAbstractClass()
+     testDisjointPolymorphism()
+     testOverlappingInheritance()
+     testMultipleInheritance()
+     testMultiAspectInheritance()
+     testInheritanceDynamicCopying()
 }
 
 fun testDisjointAbstractClass() {
