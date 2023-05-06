@@ -4,8 +4,8 @@ class ChickenNuggets(
     fat: Double,
     carbohydrates: Double,
     protein: Double,
-    val sodium: Double,
-    val cholesterol: Double
+    private val sodium: Double,
+    private val cholesterol: Double
 ) : Food(fat, carbohydrates, protein) {
     override val freshness = Freshness.FRIED
     override fun getNutritionalScore(): String {

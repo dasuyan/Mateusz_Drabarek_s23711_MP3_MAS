@@ -4,8 +4,8 @@ class CannedPineapple(
     fat: Double,
     carbohydrates: Double,
     protein: Double,
-    val potassium: Double,
-    val calcium: Double
+    private val potassium: Double,
+    private val calcium: Double
 ) : Food(fat, carbohydrates, protein) {
     override val freshness = Freshness.CANNED
     override fun getNutritionalScore(): String {
